@@ -11,7 +11,7 @@ describe('Park', function() {
 
   beforeEach(function () {
     dinosaur1 = new Dinosaur('steggasaurous', 'herbivore', 100);
-    dinosaur2 = new Dinosaur('t-rex', 'herbivore', 50);
+    dinosaur2 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaurCollection = [dinosaur1];
     park = new Park('Jurassic Park', 100, dinosaurCollection);
   })
@@ -55,9 +55,8 @@ describe('Park', function() {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function () {
-    park.findMostPopularDino(dinosaur1);
-    const actual = park.dinosaur.species;
-    assert.deepStrictEqual(actual, 'steggasaurous')
+    const actual = park.findMostPopularDino(dinosaur.species);
+    assert.strictEqual(actual, 'steggasaurous');
   });
 
 });

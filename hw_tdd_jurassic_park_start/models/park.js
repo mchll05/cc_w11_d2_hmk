@@ -25,13 +25,18 @@ Park.prototype.findDinosaurBySpecies = function (dinosaurHunt) {
 Park.prototype.removeDinosaursBySpecies = function (species) {
     for (dinosaur of this.dinosaurCollection){
     if(dinosaur.species === species){
-      this.dinosaurCollection.splice(dinosaur)
+      this.dinosaurCollection.splice(dinosaur);
     }
   }
 }
 
-Park.protype.findMostPopularDino = function () {
-
+Park.prototype.findMostPopularDino = function (guests) {
+  for (dinosaur of this.dinosaurCollection){
+  if(dinosaur.guestsAttractedPerDay > guests){
+    this.dinosaurCollection.sort(dinosaur);
+    }
+  }
+  return dinosaur.species;
 }
 
 
